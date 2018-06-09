@@ -1,21 +1,50 @@
-"""
-Detect a cycle in a linked list. Note that the head pointer may be 'None' if the list is empty.
-
-A Node is defined as: 
+# Python program to detect loop in the linked list
  
-    class Node(object):
-        def __init__(self, data = None, next_node = None):
-            self.data = data
-            self.next = next_node
-"""
-
-
-def has_cycle(head):
-    fastP = head
-    slowP = head
-    while (slowP and fastP.next and fastP.next):
-        if fastP == slowP:
-            return True
-        fastP = fastP.next.next
-        slowP = slowP.next
-    return False
+# Node class 
+class Node:
+ 
+    # Constructor to initialize the node object
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+class LinkedList:
+ 
+    # Function to initialize head
+    def __init__(self):
+        self.head = None
+ 
+    # Function to insert a new node at the beginning
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+ 
+    # Utility function to prit the linked LinkedList
+    def printList(self):
+        temp = self.head
+        while(temp):
+            print temp.data,
+            temp = temp.next
+ 
+ 
+    def detectLoop(self):
+        slow_p = self.head
+        fast_p = self.head
+        while(slow_p and fast_p and fast_p.next):
+            slow_p = slow_p.next
+            fast_p = fast_p.next.next
+            if slow_p == fast_p:
+                print "Found Loop"
+                return
+ 
+# Driver program for testing
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(10)
+ 
+# Create a loop for testing
+llist.head.next.next.next.next = llist.head
+llist.detectLoop()
