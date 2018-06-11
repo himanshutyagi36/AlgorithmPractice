@@ -1,4 +1,17 @@
 ## https://www.hackerrank.com/challenges/equal/problem
+
+# Using this fact, we can calculate in O(1) time how many 
+# operations it takes to remove n chocolates - see numOps()
+
+# The optimal solution is usually to reduce everyone's # of chocolates
+# down to the minimum # in the group, however it may also be the case that
+# {min-1, min-2, min-3, min-4} are more optimal since we have the option of
+# taking away up to 5 chocolates at a time.
+
+# Using all this information, we can use a greedy approach where
+# we iterate over every co-worker and reduce their chocolates down
+# to the minimum.
+
 import math
 import os
 import random
