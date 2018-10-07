@@ -1,1 +1,5 @@
 /.project
+
+/CTCI/**/*.class
+/Hackerrank/**/*.class
+/Leetcode/**/*.class
