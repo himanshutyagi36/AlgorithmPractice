@@ -1,4 +1,5 @@
 ## https://leetcode.com/problems/shortest-completing-word/description/
+import collections
 class Solution(object):
     def shortestCompletingWord(self, licensePlate, words):
         """
@@ -25,4 +26,3 @@ class Solution(object):
                 elif len(w) < len(ans):
                     ans = w
         return ans
-        
