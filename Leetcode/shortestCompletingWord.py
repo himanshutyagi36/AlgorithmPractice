@@ -9,8 +9,8 @@ class Solution(object):
         """
         ## idea is to iterate through licensePlate and add the number of occurances 
         ## of each letter in dictionary. Then iterate through all the words, and 
-        ## update the answer according to the length of the smallest word that 
-        ## contains all the letter from licence plate.
+        ## update the answer according to the length of the smallest word that
+        ## contains all the letter from license plate.
         ans = ""
         d = collections.defaultdict(int)
         for c in licensePlate:
